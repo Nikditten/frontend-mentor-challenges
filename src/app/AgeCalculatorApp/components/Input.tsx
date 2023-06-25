@@ -1,4 +1,3 @@
-import { type } from "os";
 import { FC } from "react";
 
 interface Props {
@@ -31,9 +30,12 @@ const Input: FC<Props> = ({ name, value, onChange }) => {
   };
   return (
     <div className="flex flex-col gap-1">
-      <label className="capitalize">{name}</label>
+      <label htmlFor={name} className="text-[10px] capitalize text-gray-400">
+        {name.toUpperCase()}
+      </label>
       <input
-        className=""
+        name={name}
+        className="h-10 w-[120px] text-2xl placeholder:text-xl p-2 border-[1px] border-gray-400/25 rounded-md placeholder:font-bold font-bold"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         type="number"
