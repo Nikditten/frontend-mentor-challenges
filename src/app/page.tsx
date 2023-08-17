@@ -18,7 +18,7 @@ export default function Home() {
               height={200}
               className="h-2/3 w-full object-cover rounded-t-xl"
             />
-            <h1 className="h-1/3 w-full px-2 text-start flex items-center">
+            <h1 className="h-1/3 w-full px-2 font-bold text-center flex justify-center items-center">
               {route.title}
             </h1>
           </a>
