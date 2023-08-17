@@ -9,21 +9,46 @@ import Instagram from "@/app/LaunchCountdownTimer/res/images/icon-instagram.svg"
 import Pinterest from "@/app/LaunchCountdownTimer/res/images/icon-pinterest.svg";
 import SocialMediaButton from "./components/SocialMediaButton";
 import CountDownItem from "./components/CountDownItem";
+import { useEffect, useState } from "react";
 
 const AgeCalculatorApp: NextPage = () => {
+  const [daysReamining, setDaysRemaining] = useState<number>(0);
+  const [hoursReamining, setHoursRemaining] = useState<number>(0);
+  const [minutesReamining, setMinutesRemaining] = useState<number>(0);
+  const [secondsReamining, setSecondsRemaining] = useState<number>(0);
+
+  useEffect(() => {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const nextYear = currentYear;
+    const targetDate = new Date(`December 31, ${nextYear} 23:59:59`);
+
+    const interval = setInterval(() => {
+      const difference = targetDate.getTime() - now.getTime();
+      setDaysRemaining(Math.floor(difference / (1000 * 60 * 60 * 24)));
+      setHoursRemaining(Math.floor((difference / (1000 * 60 * 60)) % 24));
+      setMinutesRemaining(Math.floor((difference / 1000 / 60) % 60));
+      setSecondsRemaining(Math.floor((difference / 1000) % 60));
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [daysReamining, hoursReamining, minutesReamining, secondsReamining]);
+
   return (
     <main
       className="h-screen w-screen bg-[#191a24] relative"
       style={{ fontFamily: "Red Hat Text" }}
     >
       <Image
-        className="h-full w-full z-0 object-cover"
+        className="h-3/4 relative z-0 object-cover"
         src={Stars}
         alt="stars"
       />
-      <div className="relative z-40">
+      <div className="h-1/4 relative z-40">
         <Image
-          className="min-w-full h-[25vh] absolute bottom-0 object-cover"
+          className="min-w-full h-full absolute bottom-0 object-cover"
           src={Mountains}
           alt="moutains"
         />
@@ -43,10 +68,10 @@ const AgeCalculatorApp: NextPage = () => {
         </h1>
 
         <div className="flex flex-row jusitfy-center items-center gap-4">
-          <CountDownItem value={8} label="days" />
-          <CountDownItem value={23} label="hours" />
-          <CountDownItem value={55} label="minutes" />
-          <CountDownItem value={41} label="seconds" />
+          <CountDownItem value={daysReamining.toString()} label="days" />
+          <CountDownItem value={hoursReamining.toString()} label="hours" />
+          <CountDownItem value={minutesReamining.toString()} label="minutes" />
+          <CountDownItem value={secondsReamining.toString()} label="seconds" />
         </div>
       </div>
     </main>
