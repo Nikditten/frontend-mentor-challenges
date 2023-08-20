@@ -17,8 +17,8 @@ const CountDownItem: FC<Props> = ({ value, label }) => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-4">
-      <div className="h-24 w-24 relative rounded-lg bg-gradient-to-b from-[#1e1f29] to-[#343650]">
-        <h1 className="w-full absolute top-1/2 -translate-y-1/2 font-bold text-[#fb6087] text-4xl text-center">
+      <div className="h-16 w-16 md:h-24 md:w-24 relative rounded-lg bg-gradient-to-b from-[#1e1f29] to-[#343650]">
+        <h1 className="w-full absolute top-1/2 -translate-y-1/2 font-bold text-[#fb6087] text-xl md:text-4xl text-center">
           {valueFormatted()}
         </h1>
         <div className="w-full top-1/2 -translate-y-1/2 absolute flex flex-row justify-center items-center">

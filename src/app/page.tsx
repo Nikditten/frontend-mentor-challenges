@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="p-24">
-      <ul className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+    <main className="p-4 md:p-4">
+      <ul className="grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
         {routesConfig.map((route) => (
           <a
             className=" rounded-xl bg-white shadow-md hover:drop-shadow-xl transition duration-900 ease-in-out flex flex-col justify-between items-center"
