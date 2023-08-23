@@ -1,11 +1,10 @@
 "use client";
 import "leaflet/dist/leaflet.css";
 import { NextPage } from "next";
-import { MdChevronRight } from "react-icons/md";
 import InfoItem from "./components/Info/InfoItem";
 import Divider from "./components/Info/Divider";
 import { useEffect, useState } from "react";
-import DynamicMap from "./components/Map/DynamicMap";
+import DynamicMap from "./components/map/DynamicMap";
 import BackgroundImage from "./components/BackgroundImage";
 import InfoContainer from "./components/Info/InfoContainer";
 import SearchForm from "./components/SearchForm";
