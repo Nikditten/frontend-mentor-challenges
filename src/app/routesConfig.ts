@@ -1,6 +1,6 @@
 import agecalc from "@/app/AgeCalculatorApp/design/desktop-completed.jpg";
 import launchcountdowntimer from "@/app/LaunchCountdownTimer/design/desktop-design.jpg";
-import ipaddresstacker from "@/app/IpAddressTracker/design/desktop-design.jpg";
+import ipaddresstacker from "@/app/IPAddressTracker/design/desktop-design.jpg";
 
 const routesConfig = [
   {
