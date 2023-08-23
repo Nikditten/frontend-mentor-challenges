@@ -9,8 +9,6 @@ import BackgroundImage from "./components/BackgroundImage";
 import InfoContainer from "./components/Info/InfoContainer";
 import SearchForm from "./components/SearchForm";
 
-// use Rubic font - https://fonts.google.com/specimen/Rubik
-
 interface IIPInfo {
   ip: string;
   location: {
